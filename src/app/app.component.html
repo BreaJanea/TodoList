@@ -6,9 +6,8 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
 
 
   :host {
@@ -110,14 +109,15 @@
   <h1>TODOList</h1>
   <p>A Place to Store your ToDos</p> <br/>
 
-<input type="text" placeholder="Filter Your To-Dos "><br/>
+<input type="text" placeholder="Filter Your To-Dos ">
 <table class="table">
 <tbody>
   <tr *ngFor="let t of todoArray">
-   <td> <button  class="done" >Complete</button></td>
-   <td>{{ t.task }} </td>
+  <td> <button  class="done" >Complete</button></td>
+  <td>{{ t.task }} </td>
+ 
 
-  </tr>
+<button class="delete" (click)="deleteTask(t)">X</button>
   </tbody>
   </table>
      

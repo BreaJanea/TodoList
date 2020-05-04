@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
 import { Todo } from './interfaces/todo';
-
+import { toUnicode } from 'punycode';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-
-
-
 })
 export class AppComponent {
   title = 'todolist';
   task:string ="";
   newTask:string ="";
- 
-
 
   todoArray:Todo[] = [
     {task: "Walk Dog", completed: false},
@@ -31,8 +26,8 @@ export class AppComponent {
         this.todoArray.push({task: this.newTask, completed: false});
   }
 
-  deleteTask = (todo: Todo) => {
-  this.todoArray=this.todoArray.filter(todo => todo.task !== this.task);
+deleteTask = (todo:Todo) => {
+  this.todoArray = this.todoArray.filter(t => t != todo);
   }
 }
-  
+
